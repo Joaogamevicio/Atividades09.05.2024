@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nota Aluno</title>
+</head>
+<body>
+  <h1>Descubra sua nota </h1> 
+  <p>Nome:<span id="Nome"></span></p>
+  <p>NotaMaior:<span id="NotaMaior"></span></p>
+  <p>NotaDoMeio:<span id="NotaDoMeio"></span></p>
+  <p>NotaMenor:<span id="NotaMenor"></span></p>
+  <p>Resultado:<span id="Resultado"></span></p>
+<script>
+ let Nome;
+ let nota1;
+ let nota2;
+ let nota3;
+ let NotaMaior;
+ let NotaDoMeio;
+ let NotaMenor;
+ let Resultado;
+
+   Nome = prompt("Pessoa 1, Digite seu nome :");
+   nota1 = Number(prompt("Digite a sua primeira nota de 0 a 10: "));
+   nota2 = Number(prompt("Digite a sua segunda nota de 0 a 10: "));
+   nota3 = Number(prompt("Digite a sua terceira nota de 0 a 10: "));
+
+   if (nota1 >= nota2 && nota1 >= nota3) {
+       NotaMaior = nota1;
+       if (nota2 >= nota3) {
+           NotaDoMeio = nota2;
+           NotaMenor = nota3;
+       } else {
+           NotaDoMeio = nota3;
+           NotaMenor = nota2;
+       }
+   } else if (nota2 >= nota1 && nota2 >= nota3) {
+       NotaMaior = nota2;
+       if (nota1 >= nota3) {
+           NotaDoMeio = nota1;
+           NotaMenor = nota3;
+       } else {
+           NotaDoMeio = nota3;
+           NotaMenor = nota1;
+       }
+   } else {
+       NotaMaior = nota3;
+       if (nota1 >= nota2) {
+           NotaDoMeio = nota1;
+           NotaMenor = nota2;
+       } else {
+           NotaDoMeio = nota2;
+           NotaMenor = nota1;
+       }
+   }
+
+   Resultado = (NotaMaior + NotaDoMeio + NotaMenor) / 3;
+
+   if (Resultado >= 6) {
+       Resultado = "O aluno " + Nome + " foi aprovado: " + Resultado.toFixed(2);
+   } else {
+       Resultado = "O aluno " + Nome + " foi reprovado: " + Resultado.toFixed(2);
+   }
+
+   document.getElementById("Nome").innerHTML = Nome;
+   document.getElementById("NotaMaior").innerHTML = NotaMaior;
+   document.getElementById("NotaDoMeio").innerHTML = NotaDoMeio;
+   document.getElementById("NotaMenor").innerHTML = NotaMenor;
+   document.getElementById("Resultado").innerHTML = Resultado;
+</script>
+</body>
+</html>

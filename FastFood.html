@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido de Fast Food</title>
+</head>
+<body>
+  <h1>Menu</h1> 
+  <p>Opção (única) &emsp; Preço (R$)</p>
+  <p>1. Big Super Sanduba: &emsp; 5,00</p>
+  <p>2. Quase Super Sanduba: &emsp; 3,00</p>
+  <p>3. Mirradus Sanduba: &emsp; 1,50</p>
+  <br>
+  <h2>Faça seu pedido:</h2>
+  <p><span id="Pedido"></span></p>
+  <p>Preço:<span id="Preco"></span></p>
+
+<script>
+ let opcao;
+ let preco;
+ let quantidade;
+
+ 
+   opcao = prompt("Faça seu pedido: Digite a opção (1 - Big Super Sanduba $5,00 , 2 - Quase Super Sanduba $3,00 ou 3 - Mirradus Sanduba $1,50)");
+   quantidade = prompt("Escolha a quantidade do pedido: ")
+
+   if (opcao === "1") {
+       preco = 5.00 * quantidade
+       document.getElementById("Pedido").innerHTML = "Você escolheu: Big Super Sanduba";
+       document.getElementById("Preco").innerHTML = preco.toFixed(2);
+   } else if (opcao === "2") {
+       preco = 3.00 * quantidade
+       document.getElementById("Pedido").innerHTML = "Você escolheu: Quase Super Sanduba";
+       document.getElementById("Preco").innerHTML = preco.toFixed(2);
+   } else if (opcao === "3") {
+       preco = 1.50 * quantidade
+       document.getElementById("Pedido").innerHTML = "Você escolheu: Mirradus Sanduba";
+       document.getElementById("Preco").innerHTML = preco.toFixed(2);
+   } else {
+       document.getElementById("Pedido").innerHTML = "Opção inválida. Escolha 1, 2 ou 3.";
+
+   }
+</script>
+</body>
+</html>
